@@ -43,7 +43,7 @@ const Navbar = () => {
           <Link to="/contact" className="transition-transform transform hover:scale-105 p-1">Contact</Link>
           <Link to="/travel-services" className="transition-transform transform hover:scale-105 p-1">Travel Services</Link>
           <Link to="/product-service" className="transition-transform transform hover:scale-105 p-1">Product Service</Link>
-          {user?(<ProfileInfoCard user={user} logo={<LuUser />}/>):(<Link to="/auth">
+          <Link to="/auth">
             <button className="btn btn-primary">Login</button>
           </Link>)}
         </div>

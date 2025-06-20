@@ -1,16 +1,25 @@
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import HERO_IMAGE from '../../assets/HERO_IMAGE.png';
 import Navbar from '../../components/Layout/Navbar';
 import LinkCard from '../../components/Cards/LinkCard';
 import { LuCar, LuLuggage } from 'react-icons/lu';
+import AppLayout from '../../components/Layout/AppLayout';
 import MovingMoveMate from '../../components/Animations/MovingMoveMate';
 // Framer Motion Variants
 
 
+const founder = true;
+const review = true;
 const Home = () => {
+
   return (
     <div>
-      <Navbar />
+      {/* <Navbar/> */}
 
       <div className="pt-10 pl-5 md:flex justify-between px-40 h-screen gap-8 ">
         {/* Hero Section */}
@@ -30,13 +39,16 @@ const Home = () => {
         </div>
 
         {/* Animated MOVEMATE Line */}
-        <div className="flex  items-center relative bottom-16 left-4 gap-4 w-full justify-center mt-20">
+        <div className="flex  items-center gap-4 w-full justify-center mt-20">
          
         <MovingMoveMate/>
         </div>
       </div>
+{/* >>>>>>> refs/remotes/origin/main */}
     </div>
   );
 };
 
-export default Home;
+// Wrap Home with layout and pass props
+export default AppLayout({ founder, review })(Home);
+// export default Home;

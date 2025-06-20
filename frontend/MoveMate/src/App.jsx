@@ -7,6 +7,7 @@ import Login from "./pages/Auth/Login"
 import Register from "./pages/Auth/Register"
 import LoginSignupFlip from "./pages/Auth/LoginSignupFlip"
 import AuthProvider from "./context/AuthContext"
+import Contact from './pages/Contact/Contact'
 function App() {
   
 
@@ -19,10 +20,10 @@ function App() {
 
       <Route path="/" element={<Home/>}/>
       <Route path='/about' element={<About/>} />
+      <Route path="/contact" element={<Contact/>}/>
       <Route path="/auth" element={<LoginSignupFlip/>}/>
-      
       <Route path="*" element={<NotFound/>}/>
-
+    
     </Routes>
     </BrowserRouter>
     
