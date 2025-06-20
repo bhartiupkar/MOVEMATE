@@ -2,15 +2,14 @@ import React, {useState} from 'react'
 import {FaRegEye,FaRegEyeSlash} from 'react-icons/fa6'
 
 
-const Input = ({value,onChange, label,placeholder,type}) => {
+const Inputs = ({value,onChange, label,placeholder,type}) => {
     const [showPassword,setShowPassword]=useState(false);
     const toggleShowPassword=()=>{
         setShowPassword(!showPassword)
     }
   return (
     <div className=''>
-        
-        <label className='text-[13px] text-slate-800'>{label}</label>     
+        <label className='text-[13px] text-black '>{label}</label>     
         <div className='input-box'>
             <input
             type={
@@ -42,4 +41,4 @@ const Input = ({value,onChange, label,placeholder,type}) => {
   )
 }
 
-export default Input
+export default Inputs
