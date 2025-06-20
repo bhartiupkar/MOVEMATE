@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
+
 @theme{
     --font-display:"Urbanist",sans-serif;
     --breakpoint-3xl:1920px;
@@ -9,12 +10,33 @@
 
 @layer{
     html{
-        font-family:var(--font-fisplay);
+        font-family:var(--font-display);
     }
     body{
         background-color: #fcfbfc;
         overflow-x: hidden;
     }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 500ms ease-out;
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.8s ease-out forwards;
 }
 
 
@@ -27,6 +49,25 @@
 }
 .custom-scrollbar::-webkit-scrollbar-track{
     background: transparent;
+}
+.perspective {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.flip-card {
+  transition: transform 0.8s ease;
+}
+
+.flipped {
+  transform: rotateY(180deg);
 }
 
 
@@ -69,3 +110,12 @@
   @apply w-full text-sm text-black outline-none bg-white border border-slate-100 px-2.5 py-3 rounded-md mt-2 placeholder:text-gray-500 focus-within:border-purple-300;
 }
 
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}

@@ -3,6 +3,8 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import NotFound from "./pages/NotFound"
 import Home from "./pages/Home/Home"
 import About from "./pages/About/About"
+import Footer from "./components/Layout/Footer"
+import Contact from "./pages/Contact/Contact"
 function App() {
   
 
@@ -13,9 +15,9 @@ function App() {
       
       <Route path="/" element={<Home/>}/>
       <Route path='/about' element={<About/>} />
-      <Route path="/ser"/>
+      <Route path="/contact" element={<Contact/>} />      
       <Route path="*" element={<NotFound/>}/>
-
+    
     </Routes>
     </BrowserRouter>
     
