@@ -18,3 +18,8 @@ export const changeorder=(str)=>{
     return ans;
 
 }
+
+export const validateEmail=(email)=>{
+    const regex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}

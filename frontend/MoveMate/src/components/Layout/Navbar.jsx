@@ -1,11 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { LuMapPinPlus } from 'react-icons/lu';
+import React, { useState, useRef, useEffect, useContext } from 'react';
+import { LuMapPinPlus, LuUser } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
-
+import {AuthContext} from '../../context/AuthContext'
+import ProfileInfoCard from '../Cards/ProfileInfoCard'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef();
+  const {user}=useContext(AuthContext)
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -41,16 +43,16 @@ const Navbar = () => {
           <Link to="/contact" className="transition-transform transform hover:scale-105 p-1">Contact</Link>
           <Link to="/travel-services" className="transition-transform transform hover:scale-105 p-1">Travel Services</Link>
           <Link to="/product-service" className="transition-transform transform hover:scale-105 p-1">Product Service</Link>
-          <Link to="/login">
+          {user?(<ProfileInfoCard user={user} logo={<LuUser />}/>):(<Link to="/auth">
             <button className="btn btn-primary">Login</button>
-          </Link>
+          </Link>)}
         </div>
 
         {/* Mobile Menu: Login and triple dot */}
         <div className="flex items-center lg:hidden gap-4">
-          <Link to="/login">
+          {user?(<ProfileInfoCard logo={<LuUser />}/>):(<Link to="/auth">
             <button className="btn btn-primary">Login</button>
-          </Link>
+          </Link>)}
 
           {/* Triple Dot Button */}
           <button onClick={() => setIsOpen(!isOpen)} className="btn btn-ghost">

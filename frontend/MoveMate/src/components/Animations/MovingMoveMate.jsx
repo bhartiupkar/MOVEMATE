@@ -23,10 +23,13 @@ const letterVariants = {
 };
 
 
-const MovingMoveMate = () => {
-
+const MovingMoveMate = ({word,textColor}) => {
+  console.log(word)
     const [show, setShow] = useState(true);
-      const letters = "MOVEMATE!!".split("");
+    let letters = "MOVEMATE!!".split("");
+    if(word){
+      letters=word.split("");
+    }
     
       useEffect(() => {
         const interval = setInterval(() => {
@@ -56,7 +59,7 @@ const MovingMoveMate = () => {
                   {letters.map((char, i) => (
                     <motion.div
                     key={i}
-                    className="text-6xl font-bold"
+                    className={`text-6xl font-bold ${textColor?textColor:"text-green"}`}
                     variants={letterVariants}
                     >
                       {char}

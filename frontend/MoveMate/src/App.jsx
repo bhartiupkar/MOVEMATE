@@ -6,11 +6,13 @@ import About from "./pages/About/About"
 import Login from "./pages/Auth/Login"
 import Register from "./pages/Auth/Register"
 import LoginSignupFlip from "./pages/Auth/LoginSignupFlip"
+import AuthProvider from "./context/AuthContext"
 function App() {
   
 
   return (
-    <>
+    <AuthProvider>
+
     <BrowserRouter>
     <Routes>
       
@@ -26,7 +28,8 @@ function App() {
     
     
 
-    </>
+    </AuthProvider>
+   
   )
 }
 

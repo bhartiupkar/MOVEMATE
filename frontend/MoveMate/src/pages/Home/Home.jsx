@@ -8,8 +8,6 @@ import MovingMoveMate from '../../components/Animations/MovingMoveMate';
 
 
 const Home = () => {
-  
-
   return (
     <div>
       <Navbar />
@@ -32,7 +30,7 @@ const Home = () => {
         </div>
 
         {/* Animated MOVEMATE Line */}
-        <div className="flex  items-center gap-4 w-full justify-center mt-20">
+        <div className="flex  items-center relative bottom-16 left-4 gap-4 w-full justify-center mt-20">
          
         <MovingMoveMate/>
         </div>
