@@ -5,25 +5,51 @@ import { motion } from 'framer-motion';
 import MovemateBlock from '../../components/Animations/MovemateBlock';
 import Navbar from '../../components/Layout/Navbar';
 import MovingMoveMate from '../../components/Animations/MovingMoveMate';
+import { validateEmail } from '../../utils/helper';
+import Container3D from '../../components/Animations/Container3D';
 
 const Register = ({ page, setPage }) => {
     const [flipped, setFlipped] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [fullName, setFullName] = useState("")
-
     const [error, setError] = useState('');
+
+    const handleRegister = (e) => {
+        e.preventDefault()
+        if (!fullName) {
+            setError('Please Enter Full Name')
+            return
+        }
+        if (!validateEmail(email)) {
+            setError('Please Enter a valid Email address ')
+            return;
+        }
+        if (!password) {
+            setError('Please Enter Password ')
+            return;
+        }
+        setError('')
+        //SignUp API calls
+        try{
+
+        }catch(err){
+
+        }
+
+    }
+
+
+    console.log(error)
+
+
 
     useEffect(() => {
         const interval = setInterval(() => {
             setFlipped(prev => !prev);
-        }, 5000);
+        }, 3000);
         return () => clearInterval(interval);
     }, []);
-    
-
-
-
 
 
     return (
@@ -84,7 +110,7 @@ const Register = ({ page, setPage }) => {
                     </div>
 
 
-                    <button className="btn btn-primary w-full">Login</button>
+                    <button className="btn btn-primary w-full" onClick={handleRegister}>Register</button>
 
                     <p className='text-[13px] text-slate-800 mt-3'>Already have account? {" "}
 
@@ -99,13 +125,16 @@ const Register = ({ page, setPage }) => {
                 <motion.div
                     className="relative w-full h-full transition-transform duration-700"
                     animate={{ rotateY: flipped ? 180 : 0 }}
-                    transition={{ duration: 2.5, ease: 'easeInOut' }}
+                    transition={{ duration: 1,  }}
                     style={{
                         transformStyle: 'preserve-3d',
                     }}
 
                 >
+                    <Container3D>
+
                     <MovemateBlock />
+                    </Container3D>
                 </motion.div>
             </motion.div>
         </>

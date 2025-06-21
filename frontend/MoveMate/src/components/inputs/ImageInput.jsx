@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { LuUpload, LuTrash, LuLuggage  } from 'react-icons/lu';
+import { LuUpload, LuTrash, LuLuggage } from 'react-icons/lu';
 
 const PhotoSelector = ({
   image,

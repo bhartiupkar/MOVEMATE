@@ -1,11 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { LuMapPinPlus } from 'react-icons/lu';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
-
+import { LuMapPinPlus, LuUser } from 'react-icons/lu';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef();
+  const {user}=useContext(AuthContext)
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -25,7 +26,7 @@ const Navbar = () => {
     <div className="px-2 z-50 sticky top-1.5 ">
       
       {/* Navbar */}
-      <div className="navbar bg-gray-900  px-6 rounded-2xl py-1  shadow-lg flex flex-row justify-between items-center">
+      <div className="navbar bg-gray-900  px-6 rounded-2xl py-3  shadow-lg flex flex-row justify-between items-center">
         {/* Logo */}
         <Link to='/'>
         <div className="flex items-center gap-2">
@@ -41,16 +42,16 @@ const Navbar = () => {
           <Link to="/contact" className="transition-transform transform hover:scale-105 p-1">Contact</Link>
           <Link to="/travel-services" className="transition-transform transform hover:scale-105 p-1">Travel Services</Link>
           <Link to="/product-service" className="transition-transform transform hover:scale-105 p-1">Product Service</Link>
-          <Link to="/auth">
+          {user?(<LuUser />):(<Link to="/auth">
             <button className="btn btn-primary">Login</button>
-          </Link>
+          </Link>)}
         </div>
 
         {/* Mobile Menu: Login and triple dot */}
         <div className="flex items-center lg:hidden gap-4">
-          <Link to="/login">
+          {user?(<LuUser />):(<Link to="/auth">
             <button className="btn btn-primary">Login</button>
-          </Link>
+          </Link>)}
 
           {/* Triple Dot Button */}
           <button onClick={() => setIsOpen(!isOpen)} className="btn btn-ghost">

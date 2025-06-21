@@ -59,7 +59,7 @@ const Suggestion = () => {
         <div className="w-[40%] px-10 py-6 flex flex-col gap-10">
           <div>
             <Container3D1 anglex={20} angley={20}>
-              <MoveMateAesthetic classStyle="w-full rounded-[50px] shadow-[0_-4px_12px_rgba(0,0,0,0.15)] flex justify-center items-center  bg-slate-200" />
+              <MoveMateAesthetic textSize='text-7xl' classStyle="w-full   rounded-[50px] shadow-[0_-4px_12px_rgba(0,0,0,0.15)] flex justify-center items-center  bg-slate-200" />
             </Container3D1>
           </div>
           <div className="mx-20 mt-10 ">

@@ -1,23 +1,21 @@
-import React, { useState, useEffect, useRef } from "react";
-import HERO_IMAGE from "../../assets/HERO_IMAGE.png";
-import Navbar from "../../components/Layout/Navbar";
-import LinkCard from "../../components/Cards/LinkCard";
-import { LuCar, LuLuggage } from "react-icons/lu";
-import AppLayout from "../../components/Layout/AppLayout";
-import MovingMoveMate from "../../components/Animations/MovingMoveMate";
-import OurMission from "../About/OurMission";
 import { motion } from "framer-motion";
-import MoveHorVer from "../../components/Animations/MoveHorVer";
-import Container3D1 from "../../components/Animations/Container3d1";
+import { useRef } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import BouncingArrow from "../../components/Animations/BouncingCircle";
+import Container3D1 from "../../components/Animations/Container3d1";
+import MoveHorVer from "../../components/Animations/MoveHorVer";
+import MovingMoveMate from "../../components/Animations/MovingMoveMate";
 import OnlyImageCard from "../../components/Cards/OnlyImageCard";
 import Suggestion from "../../components/Cards/Suggestion";
+import AppLayout from "../../components/Layout/AppLayout";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 // Framer Motion Variants
 
 const founder = true;
 const review = true;
 const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate=useNavigate();
     const scrollRef = useRef(null)
 
     const handleGotoAbout=()=>{
@@ -42,7 +40,7 @@ const Home = () => {
               MoveMate
             </p>
 
-            <button onClick={() => {}} className="btn btn-primary">
+            <button onClick={() => {(navigate('/search'))}} className="btn btn-primary">
               Get Started
             </button>
           </div>
