@@ -2,33 +2,45 @@
 @import "tailwindcss";
 
 
-@theme{
-    --font-display:"Urbanist",sans-serif;
-    --breakpoint-3xl:1920px;
-    --color-primary:#9328E7;
+@theme {
+  --font-display: "Urbanist", sans-serif;
+  --breakpoint-3xl: 1920px;
+  --color-primary: #9328E7;
 }
 
-@layer{
-    html{
-        font-family:var(--font-display);
-    }
-    body{
-        background-color: #fcfbfc;
-        overflow-x: hidden;
-    }
+@layer {
+  html {
+    font-family: var(--font-display);
+  }
+
+  body {
+    background-color: #fcfbfc;
+    overflow-x: hidden;
+  }
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 .animate-fade-in {
   animation: fadeIn 500ms ease-out;
 }
+
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
     transform: translateX(-50px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -40,16 +52,19 @@
 }
 
 
-.custom-scrollbar::-webkit-scrollbar{
-    width: 4px;
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
 }
-.custom-scrollbar::-webkit-scrollbar-thumb{
-    background: rgba(100,100,100,0.4);
-    border-radius: 10px;
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.4);
+  border-radius: 10px;
 }
-.custom-scrollbar::-webkit-scrollbar-track{
-    background: transparent;
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
 }
+
 .perspective {
   perspective: 1000px;
 }
@@ -71,34 +86,37 @@
 }
 
 
-@layer utilities{
+@layer utilities {
 
-    @keyframes text-shine {
-        0%{
-            background-position: 0% 50%;
-        }
-        100%{
-            background-position: 100% 50%;
-        }
-        
+  @keyframes text-shine {
+    0% {
+      background-position: 0% 50%;
     }
-    .animate-text-shine{
-        animation: text-shine 3s ease-in-out infinite alternate;
+
+    100% {
+      background-position: 100% 50%;
     }
+
+  }
+
+  .animate-text-shine {
+    animation: text-shine 3s ease-in-out infinite alternate;
+  }
 }
 
 
 /* Combined and cleaned TailwindCSS code snippets */
 
 .input-box {
-  @apply w-full flex justify-between gap-3 text-sm text-black bg-gray-50/50 rounded px-4 py-3 mb-4 mt-3 border border-gray-100 outline-none focus-within:border-purple-300;
+  @apply w-full flex justify-between gap-3  text-sm text-black bg-gray-50/50 rounded  py-3 px-4 shadow-[0_-4px_12px_rgba(0,0,1,.15)] mb-4 mt-3 border border-gray-100 outline-none focus-within:border-purple-300;
 }
 
 .btn-primary {
-  @apply w-full text-sm font-medium text-white bg-black shadow-lg shadow-purple-600/5 p-[10px] rounded-md my-1 hover:bg-gray-900/70 hover:text-green-200 cursor-pointer;
+  @apply w-full text-sm font-medium text-white bg-black shadow-lg shadow-purple-600/5 p-[10px] rounded-3xl my-1 hover:bg-gray-900/70 hover:text-green-200 cursor-pointer;
 }
+
 .btn-secondary {
-  @apply w-1/2  text-lg font-medium text-black bg-white shadow-lg shadow-purple-600/5 p-[10px] rounded-md my-1 hover:bg-gray-400/70 hover:text-green-200 cursor-pointer;
+  @apply w-1/2 text-lg font-medium text-black bg-white shadow-lg shadow-purple-600/5 p-[10px] rounded-md my-1 hover:bg-gray-400/70 hover:text-green-200 cursor-pointer;
 }
 
 .btn-small {
@@ -119,6 +137,154 @@
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+
+/* index.css or global.css */
+.meteor {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(45deg, white, transparent);
+  opacity: 1;
+  animation: meteor 2s linear infinite;
+}
+
+@keyframes meteor {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(215deg) translateX(-500px);
+    opacity: 0;
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(100vw) rotate(360deg);
+  }
+}
+
+.roll {
+  animation: roll 10s linear infinite;
+}
+
+@keyframes flow {
+  0% {
+    transform: translateX(-10%);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(110vw);
+    opacity: 0.5;
+  }
+}
+
+.flow {
+  animation: flow 24s linear infinite;
+}
+
+
+@keyframes moveLineX {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes moveLineY {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animated-border {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  z-index: 10;
+}
+
+.border-top {
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  animation: moveLineX 2s linear infinite;
+}
+
+.border-bottom {
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  animation: moveLineX 2s linear infinite;
+}
+
+.border-left {
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #3b82f6, transparent);
+  animation: moveLineY 2s linear infinite;
+}
+
+.border-right {
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #3b82f6, transparent);
+  animation: moveLineY 2s linear infinite;
+}
+
+
+@keyframes moveLine {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translate(100%);
+  }
+}
+
+.border-line-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  animation: moveLine 2s linear infinite;
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 6s ease infinite;
 }

@@ -21,12 +21,7 @@ const ProfileInfoCard = ({  logo, text}) => {
         </div>
         <div>
           <div className="text-[15px] font-bold text-amber-300 leading-5">{user.name || "Anonymous"}</div>
-          <button
-            className="text-purple-600 text-sm font-semibold cursor-pointer hover:underline"
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
+         
         </div>
       </div>
     </div>

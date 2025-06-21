@@ -10,13 +10,15 @@ import LinkCard from '../../components/Cards/LinkCard';
 import { LuCar, LuLuggage } from 'react-icons/lu';
 import AppLayout from '../../components/Layout/AppLayout';
 import MovingMoveMate from '../../components/Animations/MovingMoveMate';
+
+import { useNavigate } from 'react-router-dom';
 // Framer Motion Variants
 
 
 const founder = true;
 const review = true;
 const Home = () => {
-
+  const navigate=useNavigate();
   return (
     <div>
       {/* <Navbar/> */}
@@ -32,7 +34,7 @@ const Home = () => {
               MoveMate
             </p>
 
-            <button onClick={() => { }} className="btn btn-primary">
+            <button onClick={() => {navigate('/search') }} className="btn btn-primary">
               Get Started
             </button>
           </div>
@@ -44,7 +46,7 @@ const Home = () => {
         <MovingMoveMate/>
         </div>
       </div>
-{/* >>>>>>> refs/remotes/origin/main */}
+
     </div>
   );
 };

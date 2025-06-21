@@ -8,6 +8,9 @@ import Register from "./pages/Auth/Register"
 import LoginSignupFlip from "./pages/Auth/LoginSignupFlip"
 import AuthProvider from "./context/AuthContext"
 import Contact from './pages/Contact/Contact'
+import SearchProduct from "./pages/Forms/SearchProduct"
+import PostProduct from "./pages/Forms/PostProduct"
+import VerifyTravel from "./pages/Forms/VerifyTravel"
 function App() {
   
 
@@ -20,14 +23,17 @@ function App() {
 
       <Route path="/" element={<Home/>}/>
       <Route path='/about' element={<About/>} />
+      <Route path='/search' element={<SearchProduct/>}/>
       <Route path="/contact" element={<Contact/>}/>
+      <Route path="/product-service" element={<PostProduct/>}/>
+      <Route path="/travel-services" element={<VerifyTravel/>}/>
       <Route path="/auth" element={<LoginSignupFlip/>}/>
       <Route path="*" element={<NotFound/>}/>
     
     </Routes>
     </BrowserRouter>
     
-    
+
 
     </AuthProvider>
    
