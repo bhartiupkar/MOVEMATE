@@ -1,0 +1,82 @@
+export const travellerHistory = [
+  {
+    id: 1,
+    name: "John1",
+    age: 25,
+    destination: {
+      state: "Delhi",
+      city: "Delhi",
+    },
+    senderName: "Aditya",
+    JourneyDetails: "AXD343F0",
+    image: "",
+    mode: "road",
+    date: "2022-01-01",
+    "deliver-date": "2025-10-10",
+    pickup: {
+      state: "Bihar",
+      city: "Patna",
+    },
+    status: "Delivered",
+  },
+
+  {
+    id: 2,
+    name: "John2",
+    age: 25,
+    destination: {
+      state: "Delhi",
+      city: "Delhi",
+    },
+    senderName: "Aditya",
+    JourneyDetails: "AXD343F0",
+    image: "",
+    mode: "road",
+    date: "2022-01-01",
+    "deliver-date": "2025-10-10",
+    pickup: {
+      state: "Bihar",
+      city: "Patna",
+    },
+    status: "Delivered",
+  },
+  {
+    id: 3,
+    name: "John3",
+    destination: {
+      state: "Delhi",
+      city: "Delhi",
+    },
+    senderName: "Aditya",
+    JourneyDetails: "AXD343F0",
+    image: "",
+    mode: "road",
+    date: "2022-01-01",
+    "deliver-date": "2025-10-10",
+    pickup: {
+      state: "Bihar",
+      city: "Patna",
+    },
+    status: "Delivered",
+  },
+  {
+    id: 4,
+    name: "John4",
+    age: 25,
+    destination: {
+      state: "Delhi",
+      city: "Delhi",
+    },
+    date: "2022-01-01",
+    senderName: "Aditya",
+    JourneyDetails: "AXD343F0",
+    image: "",
+    mode: "road",
+    "deliver-date": "2025-10-10",
+    pickup: {
+      state: "Bihar",
+      city: "Patna",
+    },
+    status: "Delivered",
+  },
+];

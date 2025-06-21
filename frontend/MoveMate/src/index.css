@@ -2,6 +2,23 @@
 @import "tailwindcss";
 
 
+body::-webkit-scrollbar {
+  display: none;
+}
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 6s ease infinite;
+}
+
 @theme{
     --font-display:"Urbanist",sans-serif;
     --breakpoint-3xl:1920px;
@@ -34,6 +51,26 @@
     transform: translateX(0);
   }
 }
+.image-darken-8 {
+  filter: brightness(0.8);
+}
+.image-darken-7 {
+  filter: brightness(0.7);
+}
+
+.image-darken-6 {
+  filter: brightness(0.6);
+}
+
+.image-darken-5 {
+  filter: brightness(0.5);
+}
+
+.image-darken-4 {
+  filter: brightness(0.4);
+}
+
+
 
 .animate-fadeInLeft {
   animation: fadeInLeft 0.8s ease-out forwards;

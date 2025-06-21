@@ -12,13 +12,13 @@ const ShowReview = ({item,index, last}) => {
 </div>
 
         </div>
-      <div className='ml-2 md:ml-20 font-medium w-full flex flex-col text-3xl p-12 pr-20  border-black-50'> 
+      <div className='ml-2 md:ml-20 font-light w-full flex flex-col text-3xl p-12 pr-20  border-black-50'> 
       <div className='flex gap-8 my-4'>
-      <div className=' bg-red-400 px-2 rounded-full  font-medium text-2xl'>{item.name}</div>
+      <div className=' bg-red-400 px-2 py-[0.1px] rounded-full  font-light  text-2xl'>{item.name}</div>
       <FaStarHalfAlt className='m-1'/></div>
 
-      <div className='text-sm font-medium max-w-[75%]'>{item.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolore beatae hic delectus sunt accusamus nihil dicta cum architecto iusto quasi repudiandae ea, doloribus earum, non iste suscipit molestiae. Magni! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem quia mollitia non.</div>
-      <div className='self-end px-2 py-1 rounded-full text-sm font-bold  bg-black text-white'>{item.date}</div>
+      <div className='text-sm font-light max-w-[75%]'>{item.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolore beatae hic delectus sunt accusamus nihil dicta cum architecto iusto quasi repudiandae ea, doloribus earum, non iste suscipit molestiae. Magni! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem quia mollitia non.</div>
+      <div className='self-end px-2 py-1 rounded-full text-sm font-semibold  bg-black text-white'>{item.date}</div>
         {/* <hr className='w-12 my-4' /> */}
       </div>
       </div>

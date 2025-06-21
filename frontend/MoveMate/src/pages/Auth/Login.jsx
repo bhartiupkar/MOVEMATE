@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import MovemateBlock from '../../components/Animations/MovemateBlock';
 import Navbar from '../../components/Layout/Navbar';
 import MovingMoveMate from '../../components/Animations/MovingMoveMate';
+import AppLayout from '../../components/Layout/AppLayout';
 
 const Login = ({ page, setPage }) => {
     const [flipped, setFlipped] = useState(false);
@@ -21,7 +22,6 @@ const Login = ({ page, setPage }) => {
 
     return (
         <>
-            <Navbar />
 
             {/* Auto-flipping heading */}
             <motion.div
@@ -97,4 +97,4 @@ const Login = ({ page, setPage }) => {
     );
 };
 
-export default Login;
+export default AppLayout()(Login)

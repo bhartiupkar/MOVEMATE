@@ -25,7 +25,7 @@ const Navbar = () => {
     <div className="px-2 z-50 sticky top-1.5 ">
       
       {/* Navbar */}
-      <div className="navbar bg-gray-900 px-6 rounded-2xl py-1  shadow-lg flex flex-row justify-between items-center">
+      <div className="navbar bg-gray-900  px-6 rounded-2xl py-1  shadow-lg flex flex-row justify-between items-center">
         {/* Logo */}
         <Link to='/'>
         <div className="flex items-center gap-2">

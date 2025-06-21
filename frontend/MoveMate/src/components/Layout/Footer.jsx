@@ -1,13 +1,21 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import MoveHorVer from "../Animations/MoveHorVer";
+import ItemsNormalBg from "../Animations/ItemsNormalBg";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8 px-4">
+    <footer className="bg-gray-900 text-white py-8 px-4 h-[500px]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         
         {/* Logo or Brand Name */}
-        <div className="text-2xl font-bold">🌟 MyWebsite</div>
+        <div className="flex flex-col gap-10">
+
+        <div className="text-[130px] font-thin"><span className=" ">@</span> MOVEMATE</div>
+        <div> 
+          <ItemsNormalBg/>
+        </div>
+        </div>
 
 
         {/* Social Media Icons */}
